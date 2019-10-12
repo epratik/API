@@ -25,7 +25,7 @@ namespace LibraryAPI.Controllers
         public ActionResult<string> AddBook(BookDTO bDto)
         {
            var book = LibraryAPI.Core.Domain.Book.AddBook(bDto.name,bDto.userId);
-
+            _bookrepo.AddBook(book);
             return book.bookName;
         }
     }
