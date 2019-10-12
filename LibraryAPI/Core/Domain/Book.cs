@@ -7,6 +7,6 @@ namespace LibraryAPI.Core.Domain
 {
     public class Book
     {
-
+        public Guid id { get; set; }
     }
 }
