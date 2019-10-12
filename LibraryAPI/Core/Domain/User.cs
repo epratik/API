@@ -20,5 +20,10 @@ namespace LibraryAPI.Core.Domain
 
             return user;
         }
+
+        public string GetLink()
+        {
+            return "http://LibraryAPI/api/User/" + name + "?key=" + id.ToString();
+        }
     }
 }

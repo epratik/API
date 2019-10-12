@@ -6,17 +6,35 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using LibraryAPI.Core.Domain;
+using LibraryAPI.Core.Interfaces;
 
 namespace LibraryAPI.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class UserController : ControllerBase
     {
-        public ActionResult<string> Create(string name , string email)
+        IUserRepository _userRepo;
+        public UserController(IUserRepository userRepo)
         {
+            _userRepo = userRepo;
+        }
 
-            return "";
+        [HttpPost]
+        [Route("api/user/create")]
+        public ActionResult<string> Create(string name, string email)
+        {
+            LibraryAPI.Core.Domain.User user = LibraryAPI.Core.Domain.User.CreateUser(name, email);
+
+            return user.GetLink();
+        }
+
+        [HttpGet]
+        [Route("api/user/abc")]
+        public ActionResult<string> abc()
+        {
+            return "hello";
         }
     }
 }

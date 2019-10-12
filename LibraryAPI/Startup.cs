@@ -35,7 +35,9 @@ namespace LibraryAPI
                    options => options.UseSqlServer(connectionString)
                );
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
-
+            //services.AddSwaggerGen(c => {
+            //    c.SwaggerDoc("v1", new Info { Title = "Library API", Version = "V1" });
+            //});
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -43,6 +45,10 @@ namespace LibraryAPI
            
 
             app.UseMvc();
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c => {
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API V1");
+            //});
         }
     }
 }
