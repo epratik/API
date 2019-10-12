@@ -9,5 +9,16 @@ namespace LibraryAPI.Core.Domain
     {
         public Guid id { get; set; }
         public string name { get; set; }
+        public string email { get; set; }
+
+        public static User CreateUser(string name, string email)
+        {
+            User user = new User();
+            user.id = Guid.NewGuid();
+            user.name = name;
+            user.email = email;
+
+            return user;
+        }
     }
 }
