@@ -8,6 +8,8 @@ namespace LibraryAPI.Core.DTO
     public class FriendDto
     {
         public Guid id { get; set; }
-        public Guid friendid { get; set; }
+        public string userid { get; set; }
+        public string friendName { get; set; }
+        public string email { get; set; }
     }
 }

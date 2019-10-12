@@ -20,40 +20,16 @@ namespace LibraryAPI.Controllers
             this._friendRepo = friendRepo;
         }
 
-        // GET: api/Friend
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Friend/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         // POST: api/Friend
         [HttpPost]
-        public ActionResult<string> PostFriend(FriendDto friendDto)
+        public ActionResult<string> PostFriend(FriendDto dto)
         {
-            LibraryAPI.Core.Domain.Freind friend = LibraryAPI.Core.Domain.Freind.AddFreind(friendDto.id, friendDto.friendid);
+            LibraryAPI.Core.Domain.Freind friend = LibraryAPI.Core.Domain.Freind.AddFreind(dto.friendName,dto.userid,dto.email);
             _friendRepo.AddFriend(friend);
 
             return friend.GetLink();
         }
 
-        // PUT: api/Friend/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

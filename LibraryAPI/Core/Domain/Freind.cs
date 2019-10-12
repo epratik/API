@@ -8,13 +8,16 @@ namespace LibraryAPI.Core.Domain
     public class Freind
     {
         public Guid id { get; set; }
-        public Guid friendid { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
+        public Guid userid { get; set; }
 
-        public static Freind AddFreind(Guid id, Guid userId)
+        public static Freind AddFreind(string sName, string sUserid, string sEmail)
         {
             Freind friend = new Freind();
             friend.id = Guid.NewGuid();
-            friend.friendid = userId;
+            friend.userid  = Guid.Parse(sUserid);
+            friend.email = sEmail;
             return friend;
         }
 
