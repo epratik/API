@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryAPI.Core.Domain
+namespace LibraryAPI.Core.Interfaces
 {
-    public class Book
+    public interface IUserRepository
     {
-
     }
 }

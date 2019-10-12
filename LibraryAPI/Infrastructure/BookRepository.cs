@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Infrastructure
 {
-    public class BooksRepository
+    public class BookRepository
     {
-        public BooksRepository()
+        private LibraryContext context;
+        public BookRepository(LibraryContext libraryContext)
         {
-
+            context = libraryContext;
         }
     }
 }
