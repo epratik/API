@@ -23,7 +23,8 @@ namespace LibraryAPI.Controllers
 
         // POST: api/Friend
         [HttpPost]
-        public ActionResult<string> PostFriend(FriendDto dto)
+        [Route("api/friend/Create")]
+        public ActionResult<string> Create(FriendDto dto)
         {
             LibraryAPI.Core.Domain.Freind friend = LibraryAPI.Core.Domain.Freind.AddFreind(dto.friendName,dto.userid,dto.email);
             _friendRepo.AddFriend(friend);

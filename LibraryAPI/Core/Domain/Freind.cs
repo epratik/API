@@ -18,12 +18,13 @@ namespace LibraryAPI.Core.Domain
             friend.id = Guid.NewGuid();
             friend.userid  = Guid.Parse(sUserid);
             friend.email = sEmail;
+            friend.name = sName;
             return friend;
         }
 
         public string GetLink()
         {
-            return "http://LibraryAPI/api/User/" + name + "?key=" + id.ToString();
+            return "http://LibraryAPI/api/friend/" + name + "?key=" + id.ToString();
         }
     }
 }

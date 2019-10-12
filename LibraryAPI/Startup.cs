@@ -35,6 +35,7 @@ namespace LibraryAPI
                    options => options.UseSqlServer(connectionString)
                );
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+            services.AddScoped(typeof(IFriendRepository), typeof(FriendRepository));
             //services.AddSwaggerGen(c => {
             //    c.SwaggerDoc("v1", new Info { Title = "Library API", Version = "V1" });
             //});
