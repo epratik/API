@@ -26,10 +26,17 @@ namespace LibraryAPI.Controllers
         [Route("api/user/create")]
         public ActionResult<string> Create(UserDto userdto)
         {
-            LibraryAPI.Core.Domain.User user = LibraryAPI.Core.Domain.User.CreateUser(userdto.name, userdto.email);
+            LibraryAPI.Core.Domain.User user = LibraryAPI.Core.Domain.User.CreateUser(userdto.userName, userdto.email);
             _userRepo.AddUser(user);
             return user.GetLink();
         }
+
+        //[HttpGet]
+        //[Route("api/user/{name}")]
+        //public ActionResult<string> GetUserDetails(string key, string name)
+        //{
+
+        //}
 
         [HttpGet]
         [Route("api/user/abc")]
