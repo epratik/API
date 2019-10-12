@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Core.DTO
 {
-    public class UserDto
+    public class FriendDto
     {
-        public string userName { get; set; }
+        public Guid id { get; set; }
+        public string userid { get; set; }
+        public string friendName { get; set; }
         public string email { get; set; }
     }
 }
