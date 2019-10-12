@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using LibraryAPI.Core.Domain;
 using LibraryAPI.Core.Interfaces;
+using LibraryAPI.Core.DTO;
 
 namespace LibraryAPI.Controllers
 {
@@ -23,10 +24,10 @@ namespace LibraryAPI.Controllers
 
         [HttpPost]
         [Route("api/user/create")]
-        public ActionResult<string> Create(string name, string email)
+        public ActionResult<string> Create(UserDto userdto)
         {
-            LibraryAPI.Core.Domain.User user = LibraryAPI.Core.Domain.User.CreateUser(name, email);
-
+            LibraryAPI.Core.Domain.User user = LibraryAPI.Core.Domain.User.CreateUser(userdto.name, userdto.email);
+            _userRepo.AddUser(user);
             return user.GetLink();
         }
 

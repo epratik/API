@@ -11,12 +11,12 @@ namespace LibraryAPI.Core.Domain
         public string name { get; set; }
         public string email { get; set; }
 
-        public static User CreateUser(string name, string email)
+        public static User CreateUser(string sName, string sEmail)
         {
             User user = new User();
             user.id = Guid.NewGuid();
-            user.name = name;
-            user.email = email;
+            user.name = sName;
+            user.email = sEmail;
 
             return user;
         }

@@ -17,6 +17,7 @@ namespace LibraryAPI.Infrastructure
         public void AddBook(Book addbook)
         {
             context.Books.Add(addbook);
+            context.SaveChanges();
 
         }
     }
