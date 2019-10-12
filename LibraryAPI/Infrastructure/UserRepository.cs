@@ -18,6 +18,7 @@ namespace LibraryAPI.Infrastructure
         public void AddUser( User user)
         {
             context.Users.Add(user);
+            context.SaveChanges();
         }
     }
 }

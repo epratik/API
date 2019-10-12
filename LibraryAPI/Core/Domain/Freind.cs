@@ -7,5 +7,6 @@ namespace LibraryAPI.Core.Domain
 {
     public class Freind
     {
+        public Guid id { get; set; }
     }
 }
