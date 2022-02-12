@@ -84,6 +84,6 @@
     "tslint": "^5.13.0",
     "typescript": "3.4.5",
     "webpack-bundle-analyzer": "^3.0.4",
-    "ajv": "^6.9.2"
+    "ajv": "^6.12.3"
   }
 }
